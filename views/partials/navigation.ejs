@@ -1,0 +1,70 @@
+<nav id="navbar-example2" class="navbar navbar-expand-lg fixed-top" style="background-color: #FE8F1C;">
+  <div class="container-fluid" style="background-color: #FE8F1C;">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header" style="background-color: #FE8F1C;">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="/images/Logo.jpg" style="width: 200px;
+          height: 120px;"/></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body" style="background-color: #FE8F1C;">
+        <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#initiatives">Initiative</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#partnership">Partnership</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <% if(typeof loggedin !=="undefined" && user.admin === 1) { %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <%=user.name%>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/admin">Admin</a></li>
+                <li><a class="dropdown-item" href="user/logout">Logout</a></li>
+              </ul>
+            </li>
+          <% } if(typeof loggedin !== "undefined" && user.admin === 0) { %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <%=user.name%>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
+              </ul>
+            </li>
+          <% } if(typeof loggedin === "undefined") { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/register">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/login">Login</a>
+            </li>
+           <% } %>
+
+
+          <li class="nav-item">
+            <a class="nav-link " href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#donations">Donations<i class="bi bi-heart"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<img class="logo" src="/images/Logo.jpg"/>

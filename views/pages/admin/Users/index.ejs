@@ -1,0 +1,39 @@
+<%- include("../../../partials/util.ejs") %>
+
+<div class="main-body">
+<%- include("../../../partials/nav_admin.ejs") %>
+
+<div class="container">
+  <div class="col-lg-10 col-md-12 ">
+    <h1>All Users</h1>
+      <% if(typeof users !== "undefined" && users !== []) { %>
+        <table class="table table-dark table-bordered table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Surname</th>
+              <th scope="col">Email</th>
+              <th scope="col">Admin Type</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+              <% users.forEach((user) => { %>
+              <tr>
+                <td><%= user.name %></td>
+                <td><%= user.surname %></td>
+                <td><%= user.email %></td>
+                <td><%= user.admin %></td>
+                <td><a class="delete_user" href="/admin/users/delete/<%=user._id %>?_method=DELETE"><i class="bi bi-trash" style="font-size: 30px; color:red"></a></td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <h1>No Registered Users Available</h1>
+      <% } %>
+  </div>
+</div>
+
+<%- include("../../../partials/footer.ejs") %>
+</div>

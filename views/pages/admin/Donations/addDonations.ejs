@@ -1,0 +1,48 @@
+<%- include("../../../partials/util.ejs") %>
+
+<div class="main-body">
+<%- include('../../../partials/nav_admin.ejs') %>
+
+<section>
+  <div class="container">
+    <% if(typeof formErrors !== 'undefined') { %>
+      <% formErrors.forEach((formError) => { %>
+        <div class="alert alert-danger" role="alert">
+          <%= formError %>
+        </div>
+      <% }) %>
+    <% } %>
+
+    <% if(typeof warning !== 'undefined') { %>
+      <div class="alert alert-danger" role="alert">
+        <%= warning %>
+      </div>
+    <% } %>
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-12" style="background-color: aquamarine; margin-bottom: 20px;">
+        <form method="post" action="/admin/donations/add">
+          <div class="mb-3">
+            <label for="name" class="form-label">Donor Name:</label>
+            <input type="name" name="name" class="form-control" id="name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address:</label>
+            <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="contact" class="form-label">Contact Number:</label>
+            <input type="tel" name="contact" class="form-control" id="contact" >
+          </div>
+          <div class="mb-3">
+            <label for="amount" class="form-label">Amount:</label>
+            <input type="number" name="amount" class="form-control" id="amount">
+          </div>
+          <button type="submit" class="btn" style="margin-bottom: 20px;">Add Donation</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include("../../../partials/footer.ejs") %>
+</div>

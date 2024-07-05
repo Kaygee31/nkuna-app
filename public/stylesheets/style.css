@@ -1,0 +1,334 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato",sans-serif;
+  font-weight: 400;
+}
+
+p {
+  word-spacing: 1px;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+h4 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+section h3 {
+  text-align: center;
+}
+
+.heading {
+  text-align: center;
+  padding-top: 1.25rem;
+}
+
+.heading::after {
+  display: block;
+  height: 2px;
+  background-color: #e67e22;
+  content: ""; /* Must have when using :after pseudo-class */
+  width: 100px;
+  margin: 0 auto; /* Center content */
+  margin-top: 30px;
+}
+
+/*
+-----------------------------------------------------------------
+INPUTS
+-----------------------------------------------------------------
+*/
+.register input {
+  border-radius: 3px;
+  border: 1px solid;
+}
+
+
+input[type="text"] {
+  border: 1px solid #FE8F1C;
+}
+
+input[type="email"] {
+  border: 1px solid #FE8F1C;
+}
+
+input[type="password"] {
+  border: 1px solid #FE8F1C;
+}
+
+input[type="tel"] {
+  border: 1px solid #FE8F1C;
+}
+
+/*
+-----------------------------------------------------------------
+FORMS
+-----------------------------------------------------------------
+*/
+.register {
+  padding: 10px;
+}
+
+/*
+-----------------------------------------------------------------
+NAVIGATION
+-----------------------------------------------------------------
+*/
+.logo {
+  width: 200px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1031;
+
+  @media only screen and (max-width: 995px) {
+    display: none;
+  }
+}
+
+.navbar .navbar-nav .nav-link {
+  padding: 1em 5px;
+}
+
+.navbar .navbar-nav .nav-item {
+  position: relative;
+  margin: 0 1em;
+}
+.navbar .navbar-nav .nav-item::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  content: "";
+  background-color: brown;
+  width: 0%;
+  height: 4px;
+  transition: all 0.5s;
+}
+.navbar .navbar-nav .nav-item:hover::after {
+  width: 100%;
+}
+
+header {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url("/images/hu-chen-60XLoOgwkfA-unsplash.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  @media only screen and (max-width: 995px) {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url("/images/treet_web_small.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.header__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align: center;
+}
+
+.header__content h1 {
+  font-family: "Alex Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem;
+  color: saddlebrown;
+}
+
+.header__content h3 {
+  color: navajowhite;
+}
+
+.header__content button {
+  border: 1px solid;
+  border-radius: 0;
+  width: 10rem;
+}
+
+.btn {
+  border: 1px solid;
+  border-radius: 0;
+  width: 10rem;
+}
+
+/*
+-----------------------------------------------------------------
+INITIATIVES
+-----------------------------------------------------------------
+*/
+#main {
+  background-color: #fff;
+}
+
+.main__initiatives__image {
+  height: 200px;
+  width: 200px;
+  padding: 10px;
+}
+
+.initiative__box p {
+  padding: 10px;
+
+}
+
+.initiative__box figcaption {
+  font-size: 1.25rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .initative__box {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/*
+-----------------------------------------------------------------
+PARTNERSHIPS
+-----------------------------------------------------------------
+*/
+#partnership {
+  background-color: #CDB693;
+  padding-bottom: 20px;
+}
+
+#partnerhsip .card-body {
+  background-color: #FFF1E4;
+}
+
+#partnerhsip h4 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.card {
+  background-color: #a9a5a1;
+}
+
+.card-img-top {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+
+
+/*
+-----------------------------------------------------------------
+ABOUT   ABOUT   ABOUT   ABOUT   ABOUT   ABOUT   ABOUT
+-----------------------------------------------------------------
+*/
+.about {
+  background-image: linear-gradient(rgba(230, 217, 217, 0.4), rgba(230, 217, 217,0.7)), url("/images/joshua-gaunt-foB8u91Kgrc-unsplash.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.team__images {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 10px solid #FFF8;
+}
+
+.about__values__box i img {
+  height: 100px;
+  width: 100px;
+}
+
+.about__values__box {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+  border-radius: 3px;
+  padding: .625rem;
+  font-size: 1rem;
+  transform: skewX(-12deg);
+  margin-bottom: 5px;
+}
+
+/*
+-----------------------------------------------------------------
+CONTACT
+-----------------------------------------------------------------
+*/
+.tel_contact {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.tel_contact:nth-child(1) {
+  font-size: 50px;
+}
+
+.tel_contact:nth-child(2) {
+  font-size: 1.7rem;
+}
+
+.tel_contact:nth-child(3) {
+  font-size: 1.8rem;
+}
+
+.email_contact {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.email_contact:nth-child(1) {
+  font-size: 50px;
+}
+
+.email_contact:nth-child(2) {
+  font-size: 1.7rem;
+}
+
+.email_contact:nth-child(3) {
+  font-size: 1.7rem;
+}
+
+/*
+-----------------------------------------------------------------
+DONATIONS
+-----------------------------------------------------------------
+*/
+.donation__box {
+  padding: 10px;
+  background-color: #e5e0d5;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+
+.main-body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-body .container {
+  margin-top: 100px;
+  flex: 1
+
+  /*TABLET AND MOBILE*/
+}

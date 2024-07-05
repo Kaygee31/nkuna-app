@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hosi Nkuna Foundation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    p {
+      word-spacing: 1px;
+      letter-spacing: 1px;
+      line-height: 1.4rem;
+      font-size: 1.2rem;
+    }
+
+    img {
+      width: 12.5rem;
+    }
+
+    a {
+      text-decoration: none;
+      background-color: #e67e22;
+      padding: 0.5rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 2px;
+    }
+
+    p:last-child {
+      margin-bottom: 50px;
+    }
+
+    .container {
+      background-color: gray;
+      text-align: center;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- <div class="container">
+    <img src="./public/images/Logo.jpg">
+    <p>Hi <%=userName %></p>
+    <p>You requested to reset your password.</p>
+    <p> Please, click the link below to reset your password</p>
+    <a href="<%=link%>">Reset Password</a>
+  </div> -->
+
+  <select id="inquery" name="inquery" class="form-select form-control" for="inquery" aria-label="Default select example">
+    <option selected>Open this select menu</option>
+    <option class="gen" value="General Inquery">General Inquery</option>
+    <option value="Partnership">Partnership</option>
+    <option value="Volunteer">Volunteer</option>
+  </select>
+  <script>
+    document.querySelector('#inquery').selectedIndex = 1
+  </script>
+</body>
+</html>

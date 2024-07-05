@@ -1,0 +1,64 @@
+<%- include("../../../partials/util.ejs") %>
+
+<div class="main-body">
+<%- include("../../../partials/nav_admin.ejs") %>
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-6 col-md-8 col-sm-12">
+      <div class="register">
+        <% if(typeof err !== "undefined") { %>
+          <div class="alert alert-danger" role="alert">
+            <%= err %>
+          </div>
+        <% } %>
+
+        <% if(typeof partner !== "undefined") { %>
+
+        <h1>Edit Partner Form</h1>
+        <form method="POST" action="/admin/partnership/edit/<%=partner._id%>?_method=PUT">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" value="<%=partner.name%>" name="name" class="form-control" id="name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" value="<%=partner.email%>" name="email" class="form-control" id="email" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="partnershipType" class="form-label">Partnership Type</label>
+            <select id="partnershipType" name="partnershipType" class="form-select form-control" for="partnershipType" aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              <option value="Indivisual">Indivisual</option>
+              <option value="Business">Business</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="contact" class="form-label">Contact</label>
+            <input type="tel" value="<%=partner.contact%>" name="contact" class="form-control" id="contact">
+          </div>
+
+          <div class="mb-3">
+            <label for="projectName" class="form-label">Project Name</label>
+            <input type="text" value="<%=partner.projectName%>" name="projectName" class="form-control" id="projectName">
+          </div>
+          <button type="submit" class="btn btn-primary">Update Partner</button>
+          <a href="/admin" class="btn btn-secondary ">Back</a>
+        </form>
+        <% } %>
+      </div>
+      <% if(typeof formErrors !== "undefined") { %>
+        <% formErrors.forEach((formError) => { %>
+          <div class="alert alert-danger" role="alert">
+            <%= formError %>
+          </div>
+        <% }) %>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<%- include("../../../partials/footer.ejs") %>
+</div>

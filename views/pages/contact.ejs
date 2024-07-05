@@ -1,0 +1,77 @@
+<section id="contact" class="contact">
+  <div class="container">
+    <h1 class="heading">Contact Us</h1>
+    <h3 style="text-align: center;">For inquiries, partnership opportunities, or to learn more about our work</h3>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="row" style="margin-top: 30px;">
+          <h3>Give us a call at: </h3>
+          <div class="col-lg-12 tel_contact">
+            <i class="bi bi-telephone-forward"></i>
+            <p>Contact Number</p>
+            <p>0699053624</p>
+          </div>
+
+          <div class="col-lg-12 email_contact">
+            <i class="bi bi-envelope"></i>
+            <p>Send us an email </p>
+            <a href="mailto:coak@gmail.com">coak@gmail.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="contact_box" style="margin-top: 30px;">
+          <h3>OR Talk to us:</h3>
+          <form id="myForm" method="post" action="/">
+            <% if(typeof formErrors !== "undefined") { %>
+              <% formErrors.forEach((formError) => { %>
+                <div class="alert alert-danger" role="alert">
+                  <%= formError %>
+                </div>
+              <% }) %>
+            <% } %>
+
+
+            <div class="mb-3">
+              <label for="nameInput" class="form-label">Name</label>
+              <input type="text" name="name" class="form-control" id="nameInput">
+            </div>
+            <div class="mb-3">
+              <label for="surnameInput" class="form-label">Surname</label>
+              <input type="text" name="surname" class="form-control" id="surnameInput">
+            </div>
+            <div class="mb-3">
+              <label for="inquery" class="form-label">Inquery</label>
+              <select id="inquery" name="inquery" class="form-select form-control" for="inquery" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="General Inquery">General Inquery</option>
+                <option value="Partnership">Partnership</option>
+                <option value="Volunteer">Volunteer</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="phoneInput" class="form-label">Phone Number</label>
+              <input type="tel" name="telephone" class="form-control" id="phoneInput">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea name="messages" id="messages" class="form-control" placeholder="Leave a comment here" id="message"></textarea>
+            </div>
+            <input class="btn btn-primary btn_submit" type="submit" value="Submit">
+          </form>
+
+          <div class="alert alert-success alert-dismissible fade show" style="display: none;" role="alert">
+            Message sent sucessfully
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,41 @@
+<%- include("../../../partials/util") %>
+
+<div class="main-body">
+
+
+<%- include("../../../partials/nav_admin.ejs") %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-8 col-sm-10";
+    padding: 10px;
+    margin: 100px auto;
+    border-radius: 5px;">
+        <% if(typeof volunteer !== 'undefined') { %>
+          <h1>Edit Form</h1>
+          <form action="/admin/volunteers/edit/<%=volunteer._id%>?_method=PUT" method="post">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name:</label>
+              <input type="text" name="name" class="form-control" id="name" value="<%= volunteer.name %>">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address:</label>
+              <input type="email" name="email" value="<%= volunteer.email %>" class="form-control" id="email" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="contact" class="form-label">Contact Number:</label>
+              <input type="tel" name="contact" value="<%= volunteer.contact %>" class="form-control" id="contact">
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="/admin/volunteers" class="btn">Cancel</a>
+          </form>
+        <% } %>
+
+      </div>
+    </div>
+  </div>
+
+<%- include("../../../partials/footer.ejs") %>
+
+</div>
+
