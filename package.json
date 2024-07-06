@@ -4,7 +4,8 @@
   "description": "Donations website for the preservation of african heritage",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "server": "nodemon index.js"
   },
   "author": "Kagiso Klaas Kekana",
   "license": "ISC",
