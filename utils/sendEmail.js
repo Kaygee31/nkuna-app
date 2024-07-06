@@ -1,19 +1,19 @@
 var ejs = require('ejs');
 var nodemailer = require('nodemailer');
 const path = require("path");
+require('dotenv').config();
 
 //console.log(path.join(__dirname, "../views"));
 
 const sendEmail = async(from,email, subject, payload, template) => {
   try {
     const transporter = nodemailer.createTransport({
-      service: "Gmail",
-      host: "smtp.gmail.com",
-      port: 587,
+      service: process.env.SMTP_EMAIL,
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
       secure: true,
       auth: {
-        user:"kaygeeklaas@gmail.com",
-        pass: "pofj goze zxrb dkal",
+        user: process.env.PASS,
       }
     })
 
