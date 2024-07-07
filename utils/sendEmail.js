@@ -13,12 +13,13 @@ const sendEmail = async(from,email, subject, payload, template) => {
       port: process.env.SMTP_PORT,
       secure: true,
       auth: {
-        user: process.env.PASS,
+        user: process.env.EMAIL,
+        pass: `${process.env.PASS}`
       }
     })
 
     const source = path.join(__dirname, template);
-    // console.log(payload);
+    console.log(payload);
     const renderView = await ejs.renderFile(source,payload);
 
     await transporter.sendMail({
@@ -31,7 +32,8 @@ const sendEmail = async(from,email, subject, payload, template) => {
     return;
   }
   catch(err) {
-    res.locals.emailError = "Email not sent"
+    //res.locals.emailError = "Message Not Send, please try again later";
+    console.log(err);
   }
 }
 

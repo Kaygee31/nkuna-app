@@ -9,6 +9,7 @@ var {notFoundHandler, errorLogger} = require("./middleware/errors");
 var methodOverride = require('method-override')
 const app = express();
 require('dotenv').config();
+const PORT = process.env.PORT || 5000;
 
 app.set('view engine', 'ejs');
 
@@ -40,8 +41,8 @@ app.use(router);
 app.use(notFoundHandler);
 app.use(errorLogger);
 
-app.listen(process.env.PORT,() => {
-  console.log(`App running on localhost:${process.env.PORT}`)
+app.listen(PORT,() => {
+  console.log(`App running on localhost:${PORT}`)
 })
 
 

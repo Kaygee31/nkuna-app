@@ -25,11 +25,12 @@ const message = async(req,res) => {
     sendEmail(contactMessage.email,
               process.env.EMAIL,
               contactMessage.inquery,
-              contactMessage.message,
+              {message: contactMessage.message},
               "../views/pages/emailMessageTemplate.ejs"
             );
     await contactMessage.save();
-    return res.json({sucess: true})
+    // return {res.json:true,message}
+    return res.json({message});
   } catch (error) {
     res.json({error})
   }
