@@ -29,7 +29,7 @@ app.use(helmet({
 
 async function run() {
   try {
-    await mongoose.connect(`mongodb://127.0.0.1:27017/forgot_password`);
+    await mongoose.connect(`${process.env.MONGO_URL}`);
     console.log("Connected to Database Successfully")
   } catch (error) {
     console.log(`${error.message}`)
