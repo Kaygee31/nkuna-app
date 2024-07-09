@@ -10,6 +10,13 @@
         <% if(typeof warning !== 'undefined') { %>
           <%= warning %>
         <% } %>
+        <% if(typeof formErrors !== "undefined") { %>
+          <% formErrors.forEach((formError) => { %>
+            <div class="alert alert-danger" role="alert">
+              <%= formError %>
+            </div>
+          <% }) %>
+        <% } %>
         <form action="/admin/partnership/add/" method="post">
           <div class="mb-3">
             <label for="name" class="form-label">Name:</label>
@@ -27,9 +34,8 @@
             <label for="admin_partnership" class="form-label">Partnership Type</label>
             <select id="admin_partnership" name="partnership" class="form-select form-control" for="admin_partnership" aria-label="Default select example">
               <option selected>Open this select menu</option>
-              <option value="General Inquery">General Inquery</option>
-              <option value="Partnership">Partnership</option>
-              <option value="Volunteer">Volunteer</option>
+              <option value="indivisual">Indivisual</option>
+              <option value="business">Business</option>
             </select>
           </div>
           <div class="mb-3">

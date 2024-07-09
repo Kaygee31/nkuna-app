@@ -64,7 +64,7 @@ router.delete('admin/volunteers/:id', isAdmin, deleteVolunteer);
 //DONATIONS ROUTE
 router.get('/admin/donations',isAdmin,donationsIndex);
 router.get('/admin/donations/add', isAdmin, renderAddDonation);
-router.put('/admin/donations/add',isAdmin, addDonation);
+router.post('/admin/donations/add',isAdmin, addDonation);
 
 module.exports = router
 

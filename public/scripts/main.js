@@ -8,17 +8,11 @@ document.querySelector('.btn_partnership').addEventListener('click',function() {
   document.querySelector('#inquery').selectedIndex = 2;
 })
 
-// console.log(document.querySelector('#inquery').selectedIndex);
 
 function getFormData(form) {
   const formData = {};
-  //const elements = form.querySelectorAll('input[name]');
 
-  //GET ALL INPUTS WITH THE CLASS form-control
   const elements = form.querySelectorAll(".form-control");
-
-  //const ele = form.querySelector(".messages");
-  //console.log(elements)
 
   //HERE WE GO THROUGH ALL INPUT,TAKE THEIR AND VALUE AND USE THEM AS KEY-VALUE PAIRS IN OUR formData OBJECT
   elements.forEach(element => {
@@ -37,18 +31,7 @@ document.querySelector('.btn_submit').addEventListener('click', async function(e
   }
   const formData = getFormData(form);
 
-  /**
-   * email: "tumelo@gmail.com"
-     inquery: "Partnership"
-     messages: "dffadfdsdfgfdgdfgfgvvbxcvbvcxbvcb"
-     name: "malebo"
-     surname: "Kekana"
-     telephone: "0813383354"
-   */
-  //console.log(formData);
-
   const res = await axios.post('/',formData);
-  // console.log(res);
 
   if(res.data.errorMessage){
     for(var i=0; i < res.data.errorMessage.length; i++){
@@ -69,27 +52,10 @@ document.querySelector('.btn_submit').addEventListener('click', async function(e
   document.querySelector('.alert').style.display = "block";
 
   setTimeout(closeFlashMessage, 2000);
-  //console.log("res",res.data);
-  //console.log(document.querySelector('#nameInput').value);
-  //console.log(res.data.errorMessage)
-  // if(!res.data.errorMessage) {
-  //   elements.innerHTML = "";
-  //   document.querySelector("#nameInput").value = " ";
-  // }
-
-  // if(alt){
-  //   for (var i = 0, len = alt.length; i < len; i++) {
-  //     console.log(i)
-  //   }
-  // }
 
 })
 
-// document.querySelector('.navbar-toggle').addEventListener('click', function(){
-//   document.querySelector('.')
-// })
-
-console.log(document.querySelector('.navbar-nav').querySelectorAll('.nav-link'));
+//console.log(document.querySelector('.navbar-nav').querySelectorAll('.nav-link'));
 
 document.querySelector('.navbar-nav').querySelectorAll('.nav-link')
 

@@ -28,7 +28,10 @@ const donationsIndex = async(req,res) => {
 
 const renderAddDonation = async(req,res) => {
   try {
-    return res.render('pages/admin/Donations/addDonations')
+    return res.render('pages/admin/Donations/addDonations',{
+      loggedin: res.locals.isAuthenticated,
+      user: res.locals.user.payload
+    })
   } catch (error) {
     return res.render('pages/error')
   }
@@ -59,7 +62,7 @@ const addDonation = async(req,res) => {
     await newDonation.save();
     return res.redirect('/admin/donations')
   } catch (error) {
-    console.log(error);
+    //console.log(error);
     return res.render('pages/admin/Donations/addDonations', {
       warning: "Could not add donation, please try again later"
     })

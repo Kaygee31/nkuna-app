@@ -4,11 +4,11 @@
   <%- include("../../../partials/nav_admin.ejs") %>
 
   <div class="container">
-    <a href="/admin/volunteers/add" class="btn">Add Volunteer</a>
     <div class="col-lg-10 col-md-12 ">
         <% if(typeof warning !== 'undefined') { %>
           <h1 style="position: absolute; top: 50%; left:50%; transform:translate(-50%,-50%);"> <%= warning %> </h1>
         <% } else if(typeof volunteers !== 'undefined' && volunteers.length !== 0) { %>
+          <a href="/admin/volunteers/add" class="btn">Add Volunteer</a>
           <h1>All Volunteers</h1>
           <table class="table table-dark table-striped">
             <thead>
@@ -27,15 +27,16 @@
                   <td><%= volunteer.name %></td>
                   <td><%= volunteer.email %></td>
                   <td><%= volunteer.contact %></td>
+                  <td class="volunteer_id" style="display: none;"><%= volunteer._id %></td>
                   <td><a href="/admin/volunteers/edit/<%=volunteer._id %>"><i class="bi bi-pencil-square" style="font-size: 30px; color: green"></i></a></td>
-                  <td><a href="/admin/volunteers/delete/<%=volunteer._id %>?_method=DELETE"><i class="bi bi-trash" style="font-size: 30px; color:red"></i></a></td>
+                  <td><i class="bi bi-trash delete_volunteer" style="font-size: 30px; color:red; cursor: pointer;"></i></td>
                 </tr>
                 <% }) %>
             </tbody>
           </table>
         <%} else { %>
           <h1>No Volunteers Available</h1>
-          <a href="/admin/volunteers/add" class="btn btn-primary">Add New Partner</a>
+          <a href="/admin/volunteers/add" class="btn btn-primary">Add New Volunteer</a>
         <% } %>
     </div>
   </div>

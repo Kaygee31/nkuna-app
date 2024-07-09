@@ -1,3 +1,4 @@
+const { partnershipSchema } = require("../middleware/validationSchema");
 var Partnerhsip = require("../models/partnerships.model");
 
 
@@ -35,10 +36,13 @@ const renderAddPartnership = (req,res) => {
 }
 
 const addPartnership = async(req,res) => {
+  let arr = [];
   try {
     const name = await Partnerhsip.findOne({name: req.body.name});
     if(name) {
       res.render("pages/admin/partnerships/add",{
+        loggedin: res.locals.isAuthenticated,
+        user: res.locals.user.payload,
         warning: "Partner already exists"
       })
     }
@@ -51,12 +55,26 @@ const addPartnership = async(req,res) => {
       projectName: req.body.projectname
     })
 
+    const {error, value} = partnershipSchema.validate(req.body,{abortEarly: false});
+    if(error){
+      error.details.forEach((err) => {
+        arr.push(err.message)
+      })
+      console.log(arr);
+      return res.render("pages/admin/partnerships/add", {
+        formErrors: arr,
+        loggedin: res.locals.isAuthenticated,
+        user: res.locals.user.payload,
+      })
+    }
+
     await partnerhsip.save();
     return res.redirect("/admin/partnership");
   } catch (error) {
     return res.render('pages/admin/partnerships/add',{
-      danger: 'Something went wrong, please try again later'
+      danger: 'Something went wrong, please try again later',
     })
+    //return res.redirect('/admin/partnership/add');
   }
 
 
@@ -102,11 +120,12 @@ const deletePartnership = async(req,res) => {
   try {
     if(id) {
       await Partnerhsip.findByIdAndDelete({_id:id});
-      res.redirect("/admin/partnerships/index");
+      //res.redirect("/admin/partnerships/index");
+      return res.json({success: true});
     }
     res.json({err: "Partnership does not exists"})
   } catch (error) {
-    console.log(error);
+    return res.json({message: "Something went wrong, could not delete partner"})
   }
 }
 

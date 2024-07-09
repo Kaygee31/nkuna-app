@@ -66,6 +66,14 @@ input[type="tel"] {
   border: 1px solid #FE8F1C;
 }
 
+input[type="number"] {
+  border: 1px solid #FE8F1C;
+}
+#messages {
+  border: 1px solid #FE8F1C;
+}
+
+
 /*
 -----------------------------------------------------------------
 FORMS
