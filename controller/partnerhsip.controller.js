@@ -35,23 +35,30 @@ const renderAddPartnership = (req,res) => {
 }
 
 const addPartnership = async(req,res) => {
-  const name = await Partnerhsip.findOne({name: req.body.name});
-  if(name) {
-    res.render("pages/admin/partnerships/add",{
-      warning: "Partner already exists"
+  try {
+    const name = await Partnerhsip.findOne({name: req.body.name});
+    if(name) {
+      res.render("pages/admin/partnerships/add",{
+        warning: "Partner already exists"
+      })
+    }
+
+    const partnerhsip = new Partnerhsip({
+      name: req.body.name,
+      email: req.body.email,
+      contact: req.body.contact,
+      partnerhsipType: req.body.partnerhsipType,
+      projectName: req.body.projectname
+    })
+
+    await partnerhsip.save();
+    return res.redirect("/admin/partnership");
+  } catch (error) {
+    return res.render('pages/admin/partnerships/add',{
+      danger: 'Something went wrong, please try again later'
     })
   }
 
-  const partnerhsip = new Partnerhsip({
-    name: req.body.name,
-    email: req.body.email,
-    contact: req.body.contact,
-    partnerhsipType: req.body.partnerhsipType,
-    projectName: req.body.projectname
-  })
-
-  await partnerhsip.save();
-  return res.redirect("/admin/partnerships/");
 
 }
 
