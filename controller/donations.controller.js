@@ -51,18 +51,16 @@ const addDonation = async(req,res) => {
       })
     }
 
-    console.log("Donations here");
     const newDonation = new Donation({
       donorName: req.body.name,
       email: req.body.email,
       contact: req.body.contact,
       amount: req.body.amount
     })
-    console.log(newDonation);
+
     await newDonation.save();
     return res.redirect('/admin/donations')
   } catch (error) {
-    //console.log(error);
     return res.render('pages/admin/Donations/addDonations', {
       warning: "Could not add donation, please try again later"
     })

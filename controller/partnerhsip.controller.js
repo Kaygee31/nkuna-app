@@ -60,7 +60,7 @@ const addPartnership = async(req,res) => {
       error.details.forEach((err) => {
         arr.push(err.message)
       })
-      console.log(arr);
+      //console.log(arr);
       return res.render("pages/admin/partnerships/add", {
         formErrors: arr,
         loggedin: res.locals.isAuthenticated,

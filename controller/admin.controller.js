@@ -138,8 +138,6 @@ const renderAdminPasswordReset = (req,res) => {
   }
 }
 
-
-
 module.exports = {
   adminIndex,
   adminRegister,
