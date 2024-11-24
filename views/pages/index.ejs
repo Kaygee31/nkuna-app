@@ -26,12 +26,15 @@
       </div>
     </header>
       <main id="main">
-        <%- include("../pages/initiatives.ejs") %>
-        <%- include("../pages/partnerships.ejs") %>
-        <%- include("../pages/about.ejs") %>
-        <%- include("../pages/contact.ejs") %>
-        <%- include("../pages/donations") %>
-        <%- include("../partials/footer.ejs") %>
+        <% if(typeof team || banking || contact || statement !== "undefined") { %>
+          <%- include("../pages/initiatives.ejs") %>
+          <%- include("../pages/partnerships.ejs") %>
+          <%- include("../pages/about.ejs", {team, statement} ) %>
+          <%- include("../pages/contact.ejs", {contact} ) %>
+          <%- include("../pages/donations", {banking}) %>
+          <%- include("../partials/footer.ejs") %>
+        <% } %>
+
       </main>
 
     <script src="/scripts/main.js"></script>

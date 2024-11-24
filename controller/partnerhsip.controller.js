@@ -6,12 +6,6 @@ const partnerships = async(req,res) => {
 
   try {
     const partners = await Partnerhsip.find();
-    // const token = req.signedCookies.token;
-    // const decoded = jwt.verify(token, process.env.SECRET_KEY);
-    // if(decoded) {
-    //   res.locals.isAuthenticated = true;
-    //   res.locals.user = decoded;
-    // }
 
     res.render('pages/admin/partnerships/index', {
       partners: partners,

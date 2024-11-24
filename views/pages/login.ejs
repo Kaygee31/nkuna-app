@@ -4,7 +4,7 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-lg-5 col-md-6 col-sm-6" style="margin: 20px auto;">
+    <div class="col-lg-8 col-md-10 col-sm-6" style="margin: 20px auto;">
       <h1>Login</h1>
       <% if(typeof formErrors !== "undefined") { %>
         <% formErrors.forEach((formError) => { %>
@@ -24,8 +24,8 @@
         </div>
         <a href="/user/forgot-password" style="text-decoration: none;">Forgot Password</a>
         <div class="mb-3">
-          <button type="submit" class="btn" style="background-color: #FE8F1C; border: none;">Login</button>
-          <a href="/" class="btn btn-secondary">Cancel</a>
+          <button type="submit" class="btn btn_login" style="background-color: #FE8F1C; border: none;">Login</button>
+          <a href="/" class="btn btn_login_cancel">Cancel</a>
         </div>
         <a href="/user/register" style="text-decoration: none;">Not a Member? Register</a>
       </form>

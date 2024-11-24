@@ -4,14 +4,6 @@ var jwt = require('jsonwebtoken');
 const volunteerIndex = async(req,res) => {
   try {
     const volunteers = await Volunteers.find();
-    // const token = req.signedCookies.token
-    // if(token) {
-    //   const decoded = jwt.verify(token, process.env.SECRET_KEY);
-    //   if(decoded) {
-    //     res.locals.isAuthenticated = true;
-    //     res.locals.user = decoded;
-    //   }
-    // }
     return res.render("pages/admin/Volunteers/index", {
       volunteers: volunteers,
       loggedin: res.locals.isAuthenticated,

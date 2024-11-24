@@ -5,25 +5,42 @@ var {registerSchema, loginSchema} = require("../middleware/validationSchema");
 var User = require("../models/user.model");
 var Token = require("../models/token.model");
 var sendEmail = require("../utils/sendEmail");
+const Contact = require("../models/pages/contact.model");
+const Team = require("../models/pages/team.model");
+const Banking = require("../models/pages/banking.model");
+const Statement = require("../models/pages/statements.model");
 
 const index = async(req,res,next) => {
-  try {
-    const token = req.signedCookies.token
-    if(token) {
-      const decoded = jwt.verify(token, process.env.SECRET_KEY);
-      if(decoded) {
-        res.locals.isAuthenticated = true;
-        res.locals.user = decoded;
+  let contact;
+  let banking;
 
-        return res.render("pages/index", {
-          loggedin: res.locals.isAuthenticated,
-          user: res.locals.user.payload
-        })
-      }
+  try {
+    const contactData = await Contact.find();
+    const team = await Team.find();
+    const bankingData = await Banking.find();
+    const statement = await Statement.find();
+
+    if(contactData) {
+      contact = contactData[0];
+      banking = bankingData[0];
     }
-    return res.render("pages/index");
+
+    // console.log(res.locals);
+
+    if(!res.locals.isAuthenticated) {
+      return res.render("pages/index",{contact,team,banking,statement})
+    }
+
+    return res.render("pages/index", {
+      contact,
+      team,
+      banking,
+      statement,
+      loggedin: res.locals.isAuthenticated,
+      user: res.locals.user.payload
+    })
   } catch (error) {
-    return res.render("partials/error");
+    console.log(error);
   }
 }
 

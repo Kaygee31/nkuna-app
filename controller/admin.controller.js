@@ -2,6 +2,7 @@ var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 var Message = require("../models/messages.model");
 var User = require("../models/user.model");
+var Banking = require('../models/pages/banking.model');
 var {loginSchema, registerSchema} = require("../middleware/validationSchema");
 require('dotenv').config();
 
@@ -138,6 +139,19 @@ const renderAdminPasswordReset = (req,res) => {
   }
 }
 
+//PAGES CONTROLLER
+const renderAdminTeamPage = async (req,res) => {
+  const data = await Banking.find();
+  console.log(data[0]);
+
+  if(data) {
+    return res.render('edit_contact', { contact_details: data });
+  } else {
+    return res.status(404).send('The Team member does not exist');
+  }
+}
+
+
 module.exports = {
   adminIndex,
   adminRegister,
@@ -146,4 +160,5 @@ module.exports = {
   renderAdminLogin,
   renderAdminForgetPassword,
   renderAdminPasswordReset,
+  renderAdminTeamPage
 }

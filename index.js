@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var helmet = require("helmet");
 var path = require('path');
+
 var router = require("./routes/index.route");
 var {notFoundHandler, errorLogger} = require("./middleware/errors");
 var methodOverride = require('method-override')
@@ -23,6 +24,7 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       "script-src": ["'self'", "https://cdn.jsdelivr.net/"],
+      "img-src": ["'self'", "https: data: blob:"],
     },
   },
 }));
@@ -42,6 +44,7 @@ app.use(notFoundHandler);
 app.use(errorLogger);
 
 app.listen(PORT,() => {
+  // console.log(`App running on localhost:${PORT}`)
   console.log(`App running on localhost:${PORT}`)
 })
 

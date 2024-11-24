@@ -9,13 +9,15 @@
           <div class="col-lg-12 tel_contact">
             <i class="bi bi-telephone-forward"></i>
             <p>Contact Number</p>
-            <p>0699053624</p>
+            <!-- <p>0699053624</p> -->
+            <p><%= contact.phone_number %></p>
+
           </div>
 
           <div class="col-lg-12 email_contact">
             <i class="bi bi-envelope"></i>
             <p>Send us an email </p>
-            <a href="mailto:coak@gmail.com">coak@gmail.com</a>
+            <a href="mailto:coak@gmail.com"><%= contact.email %></a>
             </p>
           </div>
         </div>

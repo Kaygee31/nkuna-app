@@ -1,18 +1,10 @@
 const Donation = require('../models/donations.model');
 var {donationSchema} = require('../middleware/validationSchema');
-var jwt = require('jsonwebtoken');
 
 const donationsIndex = async(req,res) => {
-  const donations = await Donation.find();
   try {
-    const token = req.signedCookies.token
-    if(token) {
-      const decoded = jwt.verify(token, process.env.SECRET_KEY);
-      if(decoded) {
-        res.locals.isAuthenticated = true;
-        res.locals.user = decoded;
-      }
-    }
+    const donations = await Donation.find();
+
     res.render('pages/admin/Donations/index', {
       donations: donations,
       loggedin: res.locals.isAuthenticated,
@@ -20,6 +12,7 @@ const donationsIndex = async(req,res) => {
     })
   }
   catch(err) {
+    console.log(err);
     res.render("partials/error", {
       warning: "Something Went Wrong, Please try again later"
     })

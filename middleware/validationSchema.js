@@ -36,11 +36,39 @@ const partnershipSchema = Joi.object({
   projectname: Joi.string().min(3).max(20).required()
 })
 
+
+const editContactUsSchema = Joi.object({
+  email: Joi.string().email().required(),
+  telephone: Joi.string().regex(/^[0-9]{10}$/).messages({'string.pattern.base': `Phone number must have 10 digits.`}).required()
+})
+
+const editBankingDetailsSchema = Joi.object({
+  name: Joi.string().min(3).max(20).required(),
+  account_number: Joi.string().min(9).max(15).required(),
+  bank_name: Joi.string().min(3).max(20).required(),
+  reference: Joi.string().min(3).max(20).required(),
+})
+
+const editStatementSchema = Joi.object({
+  name: Joi.string().min(3).max(20).required(),
+  body: Joi.string().min(20).max(300).required(),
+});
+
+const editTeamSchema = Joi.object({
+  name: Joi.string().min(3).max(15).required(),
+  position: Joi.string().min(3).max(15).required(),
+}).options({allowUnknown: true});
+
+
 module.exports = {
   registerSchema,
   loginSchema,
   contactUsSchema,
   donationSchema,
-  partnershipSchema
+  partnershipSchema,
+  editContactUsSchema,
+  editBankingDetailsSchema,
+  editStatementSchema,
+  editTeamSchema
 }
 

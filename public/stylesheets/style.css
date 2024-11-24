@@ -49,7 +49,6 @@ INPUTS
   border: 1px solid;
 }
 
-
 input[type="text"] {
   border: 1px solid #FE8F1C;
 }
@@ -72,7 +71,6 @@ input[type="number"] {
 #messages {
   border: 1px solid #FE8F1C;
 }
-
 
 /*
 -----------------------------------------------------------------
@@ -164,12 +162,6 @@ header {
 }
 
 .header__content button {
-  border: 1px solid;
-  border-radius: 0;
-  width: 10rem;
-}
-
-.btn {
   border: 1px solid;
   border-radius: 0;
   width: 10rem;
@@ -327,6 +319,9 @@ DONATIONS
   border-radius: 5px;
 }
 
+.dumelang {
+  margin-top: 150px;
+}
 
 .main-body {
   display: flex;
@@ -339,4 +334,446 @@ DONATIONS
   flex: 1
 
   /*TABLET AND MOBILE*/
+}
+
+/*
+-----------------------------------------------------------------
+PAGE_EDIT       PAGE_EDIT       PAGE_EDIT       PAGE_EDIT
+-----------------------------------------------------------------
+*/
+.main {
+  height: 70vh;
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+
+.edit_pages {
+  width: 220px;
+  border-radius: 0;
+  background-color: white;
+  color: #FE8F1C;
+  border: 1px solid #FE8F1C;
+  margin-left: 20px;
+}
+
+.overview > .btn {
+  border-radius: 0;
+  border: 1px solid #FE8F1C;
+  color: #FE8F1C;
+}
+
+.overview > .btn-light:hover {
+  background-color: #FE8F1C;
+  color: white;
+}
+
+.btn.active {
+  background-color: #FE8F1C;
+  color: white;
+}
+
+.main > .section {
+  background-color: whitesmoke;
+}
+
+#contact .btn_submit {
+  width: 350px;
+  height: 50px;
+  margin-top: 20px;
+  font-size: 1.4rem;
+  background-color: #FE8F1C;
+}
+
+#partnership .btn {
+  width: 100%;
+  background-color: #FE8F1C;
+  height: 50px;
+  font-size: 1.4rem;
+  color: white;
+}
+
+.main_edit a {
+  background-color: white;
+  width: 200px;
+  border: 1px solid #FE8F1C;
+  border-radius: 0;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.main_edit a:hover {
+  background-color: #FE8F1C;
+  color: white;
+}
+
+.main_edit a:hover:last-child {
+  background-color: gray;
+  color: white;
+}
+
+
+.main_edit .btn-light:active {
+  background-color: #FE8F1C;
+  color: white;
+}
+
+
+#loadContainer {
+  /* INPUT_VALIDATIONS        INPUT_VALIDATIONS         INPUT_VALIDATIONS         INPUT_VALIDATIONS */
+  input[type="text"]:invalid {
+    border: 2px solid red;
+  }
+
+  input[type="number"]:invalid {
+    border: 2px solid red;
+  }
+
+  input[type="number"]:valid {
+    border: 2px solid green;
+  }
+
+  input[type="text"]:valid {
+    border: 2px solid green;
+  }
+
+  input[type="email"]:invalid {
+    border: 2px solid red;
+  }
+
+  input[type="email"]:valid {
+    border: 2px solid green;
+  }
+
+  input[type="tel"]:valid {
+    border: 2px solid green;
+  }
+
+  input[type="tel"]:invalid {
+    border: 2px solid red;
+  }
+
+  textarea:invalid {
+    border: 2px solid red;
+  }
+
+  textarea:valid {
+    border: 2px solid green
+  }
+}
+
+.errors {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.main > .overview {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main .team {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main .statement {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+
+.main .banking {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.main .banking_details {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.main .contact {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.main .contact_content {
+  display: inline-block;
+}
+
+.contact_content h2:last-child {
+  text-align: start;
+}
+
+.btn_login_cancel, .btn_register_cancel {
+  background-color: lightgray;
+  border: none;
+  font-size: 1.5rem;
+  width: 48%;
+  border-radius: 0;
+  letter-spacing: 1.5px;
+  height: 50px;
+}
+
+.btn_login, .btn_register {
+  background-color: #FE8F1C;
+  border: none;
+  font-size: 1.5rem;
+  width: 48%;
+  border-radius: 0;
+  letter-spacing: 1.5px;
+}
+
+.form_buttons button {
+  background-color: #FE8F1C;
+  border: none;
+  font-size: 1.2rem;
+  width: 40%;
+  border-radius: 0;
+  height: 50px;
+  letter-spacing: 1.5px;
+}
+
+.form_buttons button:last-child {
+  background-color: lightgray;
+  border: none;
+  font-size: 1.2rem;
+  width: 40%;
+  border-radius: 0;
+  letter-spacing: 1.5px;
+  height: 50px;
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .dumelang {
+    margin-top: 100px;
+  }
+
+  #partnership .btn {
+    width: 100%;
+    background-color: #FE8F1C;
+    height: 50px;
+    font-size: 1.4rem;
+    color: white;
+  }
+
+  #contact .btn_submit {
+    width: 350px;
+    height: 50px;
+    margin-top: 20px;
+    font-size: 1.4rem;
+    background-color: #FE8F1C;
+  }
+
+  .btn_login_cancel, .btn_register_cancel {
+    background-color: lightgray;
+    border: none;
+    font-size: 1.5rem;
+    width: 48%;
+    border-radius: 0;
+    letter-spacing: 1.5px;
+    height: 50px;
+  }
+
+  .btn_login, .btn_register {
+    background-color: #FE8F1C;
+    border: none;
+    font-size: 1.5rem;
+    width: 48%;
+    border-radius: 0;
+    letter-spacing: 1.5px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main > .overview {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 30px;
+  }
+  .main_edit {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 30px;
+  }
+
+  .main_edit > .btn {
+    width: 350px;
+    margin: 10px auto;
+    font-size: 1.5rem;
+    height: 70px;
+  }
+
+
+  .overview > .btn {
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+    height: 50px;
+    border-color: #FE8F1C;
+    color: #FE8F1C;
+    font-size: 1.4rem;
+  }
+
+  .form_buttons {
+    margin-bottom: 50px;
+  }
+
+  .form_buttons button {
+    background-color: #FE8F1C;
+    border: none;
+    font-size: 1.5rem;
+    width: 48%;
+    border-radius: 0;
+    letter-spacing: 1.5px;
+  }
+
+  .form_buttons button:last-child {
+    background-color: lightgray;
+    border: none;
+    font-size: 1.5rem;
+    width: 48%;
+    border-radius: 0;
+    letter-spacing: 1.5px;
+    height: 50px;
+  }
+
+  label {
+    font-size: 1.5rem;
+  }
+
+  .image_div  {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .main_edit >
+  .btn-light:focus {
+    background-color: #FE8F1C;
+    color: white;
+  }
+
+  .btn_login, .btn_register {
+    background-color: #FE8F1C;
+    border-radius: 0;
+    width: 100%;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+
+  .btn_login_cancel, .btn_register_cancel {
+    width: 100%;
+    background-color: lightgray;
+    border: 1px solid gray;
+    border-radius: 0;
+    margin-top: 20px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+
+  .form_buttons button {
+    background-color: #FE8F1C;
+    border-radius: 0;
+    width: 100%;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+
+  .form_buttons button:last-child {
+    width: 100%;
+    background-color: lightgray;
+    border: 1px solid gray;
+    border-radius: 0;
+    margin-top: 20px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+
+  #contact .btn {
+    width: 100%;
+    border-radius: 0;
+    font-size: 1.4rem;
+    background-color: #FE8F1C;
+    height: 50px;
+  }
+
+  #partnership .btn {
+    width: 100%;
+    background-color: #FE8F1C;
+    height: 50px;
+    font-size: 1.4rem;
+    color: white;
+  }
+
+  label {
+    font-size: 1.5rem;
+  }
+
+  .main_edit {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form_buttons {
+    margin-bottom: 50px;
+  }
+
+  .main {
+    grid-template-columns: none;
+    grid-template-rows: 1fr;
+    height: fit-content;
+  }
+
+  .overview {
+    justify-content: center;
+  }
+
+  .team {
+    flex-direction: column;
+  }
+
+  .section {
+    width: auto;
+    height: auto;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  .btn-light {
+    height: 50px;
+    width: 100%;
+    font-size: 1.3rem;
+    margin: 0 auto;
+    border-color: orange;
+    color: orange;
+  }
+
+  .btn-secondary {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  .image_div  {
+    text-align: center;
+  }
 }

@@ -3,14 +3,6 @@ var jwt = require('jsonwebtoken');
 
 const adminUserIndex = async(req,res) => {
   try {
-    const token = req.signedCookies.token
-    if(token) {
-      const decoded = jwt.verify(token, process.env.SECRET_KEY);
-      if(decoded) {
-        res.locals.isAuthenticated = true;
-        res.locals.user = decoded;
-      }
-    }
     const users = await User.find();
     return res.render("pages/admin/Users/index", {
       users: users,

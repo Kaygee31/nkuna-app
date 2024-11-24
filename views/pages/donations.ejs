@@ -5,14 +5,14 @@
   <div class="container">
     <div class="row">
       <div class="text-center">
-        <button class="btn btn-primary" onclick="showBankingDetails(event)">Banking Details</button>
+        <button class="btn btn-primary" disabled>Banking Details</button>
       </div>
       <div class="col-lg-6 col-md-8 col-sm-12" style="margin: 0 auto;">
         <div class="donation__box">
-          <p>Giyani Group</p>
-          <p>Account number : 10145683263</p>
-          <p>Standard bank.</p>
-          <p>Reference:Gomolemo Sekati</p>
+          <p><strong>Acc Name:</strong><%= banking.accountName %></p>
+          <p><strong>Acc number:</strong> <%= banking.accountNumber %></p>
+          <p><strong>Bank Name: </strong><%= banking.bankName %></p>
+          <p><strong>Reference:</strong> <%= banking.reference %></p>
         </div>
       </div>
     </div>

@@ -5,15 +5,10 @@
     <div class="row">
       <div class="col-lg-6 col-md-12 col-sm-12" style="padding: 0; background-color: #B8906D;">
         <div class="about__us__statement">
-          <h3 class="text-center">Mission</h3>
-          <p style="padding: 10px;">We strive to uplift rural areas across Africa by fostering economic independence, promoting education,
-            preserving cultural heritage, and improving healthcare and infrastructure.
-          </p>
-
-          <h3 class="text-center">Vision</h3>
-          <p style="padding: 10px;">We envision vibrant and thriving rural communities where every individual has access to opportunities for growth,
-            education, and well-being.
-          </p>
+          <% statement.forEach(element => { %>
+            <h3 class="text-center"><%= element.name %></h3>
+            <p style="padding: 10px;"><%= element.body %></p>
+          <% }) %>
         </div>
       </div>
 
@@ -21,24 +16,20 @@
         <div class="about__us__statement">
             <h3 class="text-center">The Team</h3>
             <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="text-center">
-                  <img loading="lazy" class="team__images" src="/images/Nkuna.jpg"/>
-                  <p>Founder: Hosi Nkuna</p>
+              <% team.forEach(element => { %>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="text-center">
+                    <img loading="lazy" class="team__images" src="<%= element.image %>"/>
+                    <p><%= element.position %>: <%= element.name %></p>
+                  </div>
                 </div>
-              </div>
-
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="text-center">
-                  <img loading="lazy" class="team__images" src="/images/Gomolemo.jpg"/>
-                  <p>CEO: Gomolemo Sekati</p>
-                </div>
-              </div>
+              <% }) %>
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <h3 class="text-center" style="margin-top: 20px; margin-bottom: 20px;">Our Core Values</h3>
     <div class="about__values">
       <div class="container-fluid">

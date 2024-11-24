@@ -24,7 +24,8 @@
                 <td><%= user.surname %></td>
                 <td><%= user.email %></td>
                 <td><%= user.admin %></td>
-                <td><a class="delete_user" href="/admin/users/delete/<%=user._id %>?_method=DELETE"><i class="bi bi-trash" style="font-size: 30px; color:red"></a></td>
+                <td class="user_id" style="display: none;"><%= user._id %></td>
+                <td><i class="bi bi-trash delete_user" style="font-size: 30px; color:red"></a></td>
               </tr>
               <% }) %>
           </tbody>
