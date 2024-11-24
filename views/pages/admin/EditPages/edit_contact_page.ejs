@@ -1,0 +1,45 @@
+<div class="contact_container">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="form_container col-lg-8 col-md-10 col-sm-10" style="margin: 0 auto;">
+        <form id="contact_form" novalidate>
+          <div class="errors">
+
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input
+              type="tel"
+              class="form-control form-control-lg"
+              value=<%= contactDetails.phone_number %>
+              minlength=10
+              maxlength=10
+              name="telephone"
+              id="phone"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="email form-control form-control-lg"
+              value=<%= contactDetails.email %>
+              name="email"
+              id="email"
+              required
+            />
+          </div>
+
+          <div class="form_buttons">
+            <button class="btn btn-primary btn_contact_submit" type="submit">Submit</button>
+            <button class="btn btn-secondary btn_cancel" type="button">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

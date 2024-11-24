@@ -31,15 +31,18 @@ document.querySelector('.btn_submit').addEventListener('click', async function(e
   }
   const formData = getFormData(form);
 
-  const res = await axios.post('/',formData);
-
-  if(res.data.errorMessage){
-    for(var i=0; i < res.data.errorMessage.length; i++){
-      var newDiv = document.createElement('div');
-      newDiv.id="alert"
-      newDiv.classList="alert alert-danger"
-      newDiv.innerHTML = res.data.errorMessage[i]
-      form.appendChild(newDiv);
+  try {
+    const res = await axios.post('/',formData);
+  }
+  catch(error) {
+    let errorMessage = "";
+    if(res.data.errorMessage){
+      res.data.errorMessage.forEach((err) => {
+        errorMessage += `<div class="btn alert btn-danger mb-2">
+          ${err}
+        </div>`
+      })
+      form.insertAdjacentHTML('afterbegin',errorMessage)
     }
   }
 
@@ -54,8 +57,6 @@ document.querySelector('.btn_submit').addEventListener('click', async function(e
   setTimeout(closeFlashMessage, 2000);
 
 })
-
-//console.log(document.querySelector('.navbar-nav').querySelectorAll('.nav-link'));
 
 document.querySelector('.navbar-nav').querySelectorAll('.nav-link')
 

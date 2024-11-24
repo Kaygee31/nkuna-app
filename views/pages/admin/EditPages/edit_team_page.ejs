@@ -1,0 +1,61 @@
+
+<div class="team_container">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="form_container col-lg-8 col-md-10 col-sm-11" style="margin: 0 auto;">
+        <form runat="server" novalidate>
+          <input class="id" type="text" hidden value="<%=the_team._id %>"/>
+
+          <div class="errors">
+          </div>
+
+          <div class="mb-3">
+              <label for="name" class="form-label">Name:</label>
+              <input
+                type="text"
+                value="<%= the_team.name %>"
+                class="form-control form-control-lg"
+                name="name"
+                id="name"
+                minlength="3"
+                maxlength="15"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="position" class="form-label">Position:</label>
+              <input
+                type="text"
+                value="<%= the_team.position %>"
+                class="form-control form-control-lg"
+                name="position"
+                id="position"
+                minlength="3"
+                maxlength="15"
+                required
+              />
+            </div>
+
+            <div class="image_div mb-3">
+              <label for="avatar">Choose a profile picture:</label>
+              <img src=<%= the_team.image %> id="blah" name="image" class="team__images"/>
+              <!-- <input type="file" accept="image/*" id="image" name="image" accept="image/png, image/jpeg" /> -->
+              <input
+                type="file"
+                accept="image/*"
+                id="imgInp"
+                class="form-control form-control-lg"
+                name="uploaded_image"
+              />
+            </div>
+
+            <div class="form_buttons">
+              <button type="submit" class="btn btn_team_submit btn-primary">Submit</button>
+              <button type="button" class="btn btn_cancel btn-secondary">Cancel</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

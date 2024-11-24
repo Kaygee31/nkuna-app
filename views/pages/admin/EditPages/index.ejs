@@ -1,0 +1,65 @@
+<%- include('../../../partials/util.ejs') %>
+
+<div class="main-body">
+  <%- include('../../../partials/nav_admin.ejs') %>
+  <div class="container">
+    <div class="row">
+      <div class="main">
+        <div class="overview">
+          <a href="#" class="btn btn-light btn_statement">Statements</a>
+          <a href="#" class="btn btn-light btn_banking">Banking Details</a>
+          <a href="#" class="active btn btn-light btn_team">The Team</a>
+          <a href="#" class="btn btn-light btn_contact">Contact</a>
+        </div>
+
+
+        <div class="section">
+          <a href="/admin/pages/edit/" class="btn edit_pages btn-secondary">Edit Pages</a>
+
+          <h1 class="text-center">Overview</h1>
+          <div class="contact" style="display: none;">
+            <% if(typeof contact !== "undefined" ) { %>
+              <div class="contact_content">
+                <h2><strong>Email:</strong> <%= contact.email %> </h2>
+                <h2><strong>Contact:</strong> <%= contact.phone_number %> </h2>
+              </div>
+            <% } %>
+
+          </div>
+
+          <div class="banking" style="display: none;">
+            <div class="banking_details">
+              <% if(typeof banking !== "undefined") { %>
+                <p><strong>Name:</strong> <%= banking.accountName %> </p>
+                <p><strong>Account Number:</strong> <%= banking.accountNumber %> </p>
+                <p><strong>Name:</strong> <%= banking.bankName %> </p>
+                <p><strong>Reference:</strong> <%= banking.reference %> </p>
+              <% } %>
+            </div>
+          </div>
+
+          <div class="team">
+            <% if(typeof the_team !== "undefined") { %>
+              <% the_team.forEach((team) => { %>
+                <div class="text-center">
+                  <img src=<%=team.image %> alt="image" class="team__images"/>
+                  <p><strong><%=team.position%></strong>: <%=team.name %></p>
+                </div>
+              <% }) %>
+            <% } %>
+          </div>
+
+
+          <div class="statement" style="display: none;">
+            <% if(typeof statements !== "undefined") { %>
+              <% statements.forEach((statement) => { %>
+                <h1><%= statement.name %></h1>
+                <p><%= statement.body%></p>
+              <% }) %>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
