@@ -43,9 +43,8 @@ app.use(router);
 app.use(notFoundHandler);
 app.use(errorLogger);
 
-app.listen(5000,() => {
-  // console.log(`App running on localhost:${PORT}`)
-  console.log(`App running on localhost:${5000}`)
+app.listen(PORT,() => {
+  console.log(`App running on localhost:${PORT}`)
 })
 
 
