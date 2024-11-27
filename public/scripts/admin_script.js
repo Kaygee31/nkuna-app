@@ -25,6 +25,7 @@ if(btnStatement || btnBanking || btnTeam || btnContact || editPages !== null) {
         team.style.display = "none";
         contact.style.display = 'none';
 
+        btnTeam.style.removeProperty('color');
         btnBanking.classList.remove('active')
         btnStatement.classList.add('active')
         btnTeam.classList.remove('active')
@@ -44,6 +45,7 @@ if(btnStatement || btnBanking || btnTeam || btnContact || editPages !== null) {
         team.style.display = 'none';
         contact.style.display = "none"
 
+        btnTeam.style.removeProperty('color');
         btnBanking.classList.add('active')
         btnStatement.classList.remove('active')
         btnTeam.classList.remove('active')
@@ -82,6 +84,7 @@ if(btnStatement || btnBanking || btnTeam || btnContact || editPages !== null) {
         statement.style.display = 'none';
         team.style.display = "none";
 
+        btnTeam.style.removeProperty('color');
         btnBanking.classList.remove('active')
         btnStatement.classList.remove('active')
         btnTeam.classList.remove('active')
@@ -92,7 +95,7 @@ if(btnStatement || btnBanking || btnTeam || btnContact || editPages !== null) {
 
   document.addEventListener('click', async function(e) {
     const target = e.target.closest(".delete_user");
-    console.log(target);
+    // console.log(target);
     if(target) {
       const userId = document.querySelector('.user_id').textContent;
 

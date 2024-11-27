@@ -594,6 +594,7 @@ PAGE_EDIT       PAGE_EDIT       PAGE_EDIT       PAGE_EDIT
   .main {
     display: flex;
     flex-direction: column;
+    margin-top: 0;
   }
 
   .main > .overview {
@@ -613,7 +614,17 @@ PAGE_EDIT       PAGE_EDIT       PAGE_EDIT       PAGE_EDIT
     width: 350px;
     margin: 10px auto;
     font-size: 1.5rem;
-    height: 70px;
+    color: #FE8F1C;
+  }
+
+  .main_edit > .btn:hover {
+    background-color: #FE8F1C;
+    color: white;
+  }
+
+  .main_edit > .btn:active {
+    background-color: #FE8F1C;
+    color: white;
   }
 
 
@@ -736,6 +747,7 @@ PAGE_EDIT       PAGE_EDIT       PAGE_EDIT       PAGE_EDIT
     grid-template-columns: none;
     grid-template-rows: 1fr;
     height: fit-content;
+    margin-top: 0;
   }
 
   .overview {
@@ -752,16 +764,29 @@ PAGE_EDIT       PAGE_EDIT       PAGE_EDIT       PAGE_EDIT
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
-  .btn-light {
+  /* .btn-light {
     height: 50px;
     width: 100%;
     font-size: 1.3rem;
     margin: 0 auto;
     border-color: orange;
     color: orange;
+  } */
+
+  .dumelang {
+    margin-top: 100px;
+  }
+
+  .main_edit a {
+    background-color: white;
+    width: 100%;
+    border: 1px solid #FE8F1C;
+    border-radius: 0;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
   }
 
   .btn-secondary {

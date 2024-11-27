@@ -85,6 +85,8 @@ btnEditStatement.addEventListener('click', function() {
       if(statement_toggle) {
         statement_toggle.selectedIndex = 0;
       }
+
+      btnEditTeam.style.removeProperty('color');
       btnEditStatement.classList.add('active');
       btnEditContact.classList.remove('active');
       btnEditTeam.classList.remove('active');
@@ -104,6 +106,8 @@ btnEditBanking.addEventListener('click', async function() {
       while (container.firstChild) {
         container.removeChild(container.firstChild);
       }
+
+      btnEditTeam.style.removeProperty('color');
       btnEditStatement.classList.remove('active');
       btnEditContact.classList.remove('active');
       btnEditTeam.classList.remove('active');
@@ -163,6 +167,8 @@ btnEditContact.addEventListener('click', async function(e) {
       while (container.firstChild) {
         container.removeChild(container.firstChild);
       }
+
+      btnEditTeam.style.removeProperty('color');
       btnEditStatement.classList.remove('active');
       btnEditContact.classList.add('active');
       btnEditTeam.classList.remove('active');
